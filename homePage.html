@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="homePage.css">
+</head>
+<body>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+            width: 25%;
+        }
+    </style>
+
+    <div class="main_div">
+        <!-- <div class="count"></div> -->
+        <div class="songImageDiv">
+            <img id="songImage" src="" alt="">
+        </div>
+        <div class="songName"></div>
+        <div class="artistName"></div>
+        <div class="controlDiv">
+            <img class="controls" src="./previous.png" onclick="previousSong()" alt=""><img class="controls" src="./pause-button.png" onclick="pauseSong()" alt=""><img class="controls" src="./play-button-arrowhead.png" onclick="playSong()" alt=""><img class="controls" src="./next-button.png" onclick="nextSong()" alt="">
+        </div>
+        <!-- <div class="time-slider">
+            <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+        </div>
+        <div class="audio-slider"></div> -->
+        <div>
+            <audio id="songField">
+                <source src="" type="audio/mpeg">
+            </audio>
+            <!-- <audio src="" controls></audio> -->
+        </div>
+    
+    </div>
+
+    
+    <script src="./homePage.js"></script>
+
+</body>
+</html>

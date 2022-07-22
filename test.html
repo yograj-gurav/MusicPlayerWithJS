@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <audio id="audioTag">
+        <source id="mySong" src="./songs/Guns N' Roses Sweet Child O' Mine l MP3.mp3">
+    </audio>
+    <input type="range" name="" id="audio-slider">
+    <div id="fill-bar"></div>
+    <button onclick="durationOfSong()">Get</button>
+
+    <div id="seek-bar">
+        <div id="fill"></div>
+        <div id="handle"></div>
+    </div>
+
+    <script>
+
+        var audioSlider = document.getElementById("audio-slider");
+        var fillbar = document.getElementById("fill-bar");
+        let song = document.getElementById('audioTag')
+        // let b = a.;
+        // console.log(document.getElementById('audioTag').duration);
+        var durationOfSong = () => {
+            console.log(document.getElementById('audioTag').duration/60);
+        }
+
+
+        setInterval(updateSongSlider, 1000);
+		function updateSongSlider(){
+			var c = Math.round(song.currentTime);
+			audioSlider.value = c;
+			fillbar.style.width = c + "px";
+			
+			var d = song.duration
+            console.log(d);
+			audioSlider.setAttribute("max", d);
+			
+		}
+		
+		//set the currentTime to match users click on the progress bar
+		function seek(){		 
+			song.currentTime = audioSlider.value;			
+			play();	
+		}
+		
+
+        // song.addEventListener('timeupdate', function () {
+
+        //     var position = song.currentTime / song.duration;
+
+        //     fillBar.style.width = position * 100 + '%';
+        // });
+        song.play();
+    </script>
+</body>
+</html>

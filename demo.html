@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <!-- <link rel="stylesheet" href="homePage.css"> -->
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img{
+            width: 25%;
+        } */
+    </style>
+
+    <div class="mainDiv">
+        <div class="col songInfo">
+            <div class="songName">
+                <!-- <img id="songImage" src="" alt=""> -->
+            </div>
+            <div class="artistName">
+
+            </div>
+            <!-- <div class="controls">
+                <img class="controlsImg" src="./previous.png" onclick="previousSong()" alt=""><img class="controlsImg" id="playPause" src="./pause-button.png" onclick="pauseSong()" alt=""><img class="controlsImg" src="./play-button-arrowhead.png" onclick="playSong()" alt=""><img class="controlsImg" src="./next-button.png" onclick="nextSong()" alt="">
+            </div> -->
+            <div class="controls">
+                <img class="controlsImg" src="./previous.png" onclick="previousSong()" alt=""><img id="playPaused" class="controlsImg" src="./play-button-arrowhead.png" onclick="playPause()" alt=""><img class="controlsImg" src="./next-button.png" onclick="nextSong()" alt="">
+            </div>
+            <div class="slider">
+                <!-- <p class="timeStamps" id="currentTime"x></p><input type="range" min="1" max="100" value="0" class="sliderBar" id="myRange"><p class="timeStamps" id="endTime"></p> -->
+                <!-- <p class="timeStamps" id="currentTime"></p> -->
+                <audio id="songField">
+                    <source src="" type="audio/mpeg">
+                </audio>
+                <p class="timeStamps" id="currentTime"></p>
+
+                <input type="range" min="1" max="100" value="0" class="sliderBar" id="myRange" onchange="seek()">
+                <p class="timeStamps" id="endTime"></p>
+                <!-- <div id="fillbar"></div> -->
+                <!-- <p class="timeStamps" id="endTime"></p> -->
+            </div>
+            
+            <div class="sliderText">
+                <img onclick="volumeDown()" class="volumeIcons" id="volumeDown" src="./volume-down.png" alt="">
+                <input type="range" name="" id="audioSlider" min="0" max="100">
+                <img onclick="volumeUp()" class="volumeIcons" id="volumeUp" src="./volume.png" alt="">
+            </div>
+        </div>
+        <div class="col songBg">
+            <div class="currentImg">
+                <img id="songImage" src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="songDiv">
+        
+    </div>
+
+    <!-- <div class="main_div"> -->
+        <!-- <div class="count"></div> -->
+        <!-- <div class="songImageDiv">
+            <img id="songImage" src="" alt="">
+        </div>
+        <div class="songName"></div>
+        <div class="artistName"></div>
+        <div class="controlDiv">
+            <img class="controls" src="./previous.png" onclick="previousSong()" alt=""><img class="controls" src="./pause-button.png" onclick="pauseSong()" alt=""><img class="controls" src="./play-button-arrowhead.png" onclick="playSong()" alt=""><img class="controls" src="./next-button.png" onclick="nextSong()" alt="">
+        </div> -->
+        <!-- <div class="time-slider">
+            <input type="range" min="1" max="100" value="0" class="slider" id="myRange">
+        </div>
+        <div class="audio-slider"></div> -->
+        <!-- <div>
+            <audio id="songField">
+                <source src="" type="audio/mpeg">
+            </audio> -->
+            <!-- <audio src="" controls></audio> -->
+        <!-- </div>
+    
+    </div> -->
+
+    
+    <script src="./homePage.js"></script>
+
+</body>
+</html>

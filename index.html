@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <style>
+        *{
+            margin: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        img{
+            width: 25%;
+            height: 25%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="images"></div>
+
+    <script>
+        var images_div = document.getElementById('images')
+        fetch('./music_files.json')
+        .then(res => {
+            // console.log(res);
+            return res.json()
+        })
+        .then(data =>{
+            // console.log(data);
+            let imgs;
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index].song_bg_image;
+                console.log(element);
+                console.log(Array.of(element));
+                var img = document.createElement('img');
+                img.src = element
+                images_div.append(img)
+                // imgs += element;
+                // console.log(imgs);
+            }
+            // var imgs = data.song_bg_image;
+            // console.log(imgs);
+            // for( x = 0; x < data.length; x++){
+            //     img.src = data[x].song_bg_image;
+            //     // console.log(data[x]);
+            // }
+            // images_div.appendChild(img)
+        })
+    </script>
+</body>
+</html>
